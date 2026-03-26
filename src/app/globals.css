@@ -259,8 +259,10 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(2.1rem, 4.6vw, 4.6rem);
-  max-width: 11ch;
+  font-size: clamp(1.75rem, 3.4vw, 3.35rem);
+  max-width: 12ch;
+  text-wrap: balance;
+  line-height: 1.01;
 }
 
 h2 {
@@ -426,7 +428,7 @@ button:hover {
 .serviceCard {
   display: flex;
   flex-direction: column;
-  min-height: 13.5rem;
+  min-height: 15rem;
 }
 
 .serviceCard p {
@@ -436,11 +438,11 @@ button:hover {
 
 /* Top row balancing: use the longest-text card as baseline and offset shorter ones */
 .serviceCard:nth-child(1) p {
-  margin-top: 2rem;
+  margin-top: 1.35rem;
 }
 
 .serviceCard:nth-child(2) p {
-  margin-top: 1.2rem;
+  margin-top: 1.1rem;
 }
 
 .serviceCard:nth-child(3) p {
@@ -448,7 +450,14 @@ button:hover {
 }
 
 .serviceCard:nth-child(4) p {
-  margin-top: 0.85rem;
+  margin-top: 0.55rem;
+  margin-bottom: 0;
+  align-self: auto;
+}
+
+.serviceCard:nth-child(4) {
+  min-height: 11rem;
+  justify-content: center;
 }
 
 .cardTag {
@@ -669,12 +678,6 @@ textarea {
   line-height: 1.35;
 }
 
-.estimateActions {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 0.55rem;
-}
-
 .estimateCta {
   display: inline-flex;
   justify-content: center;
@@ -692,18 +695,6 @@ textarea {
   content: "→";
   font-size: 1rem;
   line-height: 1;
-}
-
-.estimateCtaAlt {
-  min-width: 7.6rem;
-  background: #ffffff;
-  border: 1px solid #6b9de0;
-  color: #1a4f99;
-  box-shadow: none;
-}
-
-.estimateCtaAlt::after {
-  content: "";
 }
 
 .estimateHint {
@@ -821,7 +812,8 @@ textarea {
   border: 1px solid var(--line);
   transition: transform 0.14s ease, box-shadow 0.14s ease;
   position: relative;
-  padding-left: 1.2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .instantBtn.telegram {
@@ -831,32 +823,8 @@ textarea {
   box-shadow: none;
 }
 
-.instantBtn.whatsapp {
-  background: #ffffff;
-  border-color: #7daeed;
-  color: #1a4f99;
-}
-
 .instantBtn:hover {
   transform: none;
-}
-
-.instantBtn.telegram::before,
-.instantBtn.whatsapp::before {
-  content: "";
-  position: absolute;
-  left: 1rem;
-  width: 0.45rem;
-  height: 0.45rem;
-  border-radius: 50%;
-}
-
-.instantBtn.telegram::before {
-  background: #dceaff;
-}
-
-.instantBtn.whatsapp::before {
-  background: #5f92db;
 }
 
 .contactTrust ul {
@@ -864,6 +832,12 @@ textarea {
   padding-left: 1rem;
   display: grid;
   gap: 0.55rem;
+}
+
+.contactTrust {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .footerLinks {
@@ -1021,9 +995,9 @@ textarea {
   }
 
   h1 {
-    font-size: clamp(1.65rem, 10.5vw, 2.25rem);
+    font-size: clamp(1.08rem, 5.1vw, 1.38rem);
     max-width: 100%;
-    line-height: 1;
+    line-height: 1.05;
   }
 
   h2 {
@@ -1071,16 +1045,13 @@ textarea {
     margin-top: 0.85rem;
   }
 
+  .serviceCard:nth-child(4) p {
+    margin-top: 0.85rem;
+    align-self: auto;
+  }
+
   .estimateTracks {
     margin-bottom: 0;
-  }
-
-  .estimateActions {
-    grid-template-columns: 1fr;
-  }
-
-  .estimateCtaAlt {
-    min-width: auto;
   }
 
   .mobileStickyCta {
@@ -1148,14 +1119,16 @@ textarea {
   }
 
   h1 {
-    font-size: clamp(1.45rem, 9.2vw, 2rem);
-    line-height: 0.98;
+    font-size: clamp(1.2rem, 7.2vw, 1.6rem);
+    max-width: 100%;
+    line-height: 1.03;
+    letter-spacing: -0.01em;
     overflow-wrap: anywhere;
   }
 
   .heroChips span {
-    font-size: 0.76rem;
-    padding: 0.28rem 0.56rem;
+    font-size: 0.7rem;
+    padding: 0.24rem 0.48rem;
   }
 
   .estimateIntro li {

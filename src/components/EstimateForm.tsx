@@ -15,7 +15,6 @@ type EstimateProps = {
     resultPrefix: string;
     resultSuffix: string;
     discussCta: string;
-    discussAltCta: string;
     quickHint: string;
     options: {
       type: string[];
@@ -68,11 +67,9 @@ export function EstimateForm({ locale, labels }: EstimateProps) {
     return lines.join("\n");
   }, [complexityIdx, estimate, integrationsIdx, labels.options, locale, timelineIdx, typeIdx]);
 
-  const telegramHref = `${process.env.NEXT_PUBLIC_TELEGRAM_URL ?? "https://t.me/xouston"}?text=${encodeURIComponent(
+  const telegramHref = `${process.env.NEXT_PUBLIC_TELEGRAM_URL ?? "https://t.me/Xouston_Contact"}?text=${encodeURIComponent(
     briefMessage,
   )}`;
-  const whatsappBase = process.env.NEXT_PUBLIC_WHATSAPP_URL ?? "https://wa.me/00000000000";
-  const whatsappHref = `${whatsappBase}${whatsappBase.includes("?") ? "&" : "?"}text=${encodeURIComponent(briefMessage)}`;
 
   return (
     <div className="estimateForm">
@@ -143,14 +140,9 @@ export function EstimateForm({ locale, labels }: EstimateProps) {
       <p className="estimateResult">
         {labels.resultPrefix} <strong>{estimate}</strong> {labels.resultSuffix}
       </p>
-      <div className="estimateActions">
-        <a className="estimateCta" href={telegramHref} target="_blank" rel="noreferrer">
-          {labels.discussCta}
-        </a>
-        <a className="estimateCta estimateCtaAlt" href={whatsappHref} target="_blank" rel="noreferrer">
-          {labels.discussAltCta}
-        </a>
-      </div>
+      <a className="estimateCta" href={telegramHref} target="_blank" rel="noreferrer">
+        {labels.discussCta}
+      </a>
       <p className="estimateHint">{labels.quickHint}</p>
     </div>
   );

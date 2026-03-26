@@ -70,7 +70,6 @@ type SiteDictionary = {
     resultPrefix: string;
     resultSuffix: string;
     discussCta: string;
-    discussAltCta: string;
     quickHint: string;
     options: {
       type: string[];
@@ -93,7 +92,6 @@ type SiteDictionary = {
     instantTitle: string;
     instantSubtitle: string;
     instantTelegram: string;
-    instantWhatsapp: string;
     instantPoints: string[];
     privacyNote: string;
     success: string;
@@ -142,8 +140,8 @@ export const dictionaries: Record<Locale, SiteDictionary> = {
       ctaSecondary: "Быстрая оценка",
       metricSupport: "поддержка",
       metricMarket: "фокус рынков",
-      chips: ["NDA-first delivery", "B2C growth", "EU-ready stack"],
-      visualTitle: "Delivery pulse",
+      chips: ["NDA-first подход", "Рост B2C", "Готовность к EU"],
+      visualTitle: "Рабочий ритм",
       visualItems: [
         "Прозрачные статусы по спринтам",
         "Еженедельные демо и ретро",
@@ -233,8 +231,7 @@ export const dictionaries: Record<Locale, SiteDictionary> = {
       submit: "Получить оценку и план",
       resultPrefix: "Ориентировочный бюджет:",
       resultSuffix: "(диапазон)",
-      discussCta: "Обсудить этот диапазон",
-      discussAltCta: "WhatsApp",
+      discussCta: "Обсудить в Telegram",
       quickHint: "Кнопка отправит в мессенджер уже заполненный бриф с выбранными параметрами.",
       options: {
         type: ["Мобильное приложение", "Сайт", "Telegram-бот", "Выделенный специалист"],
@@ -257,7 +254,6 @@ export const dictionaries: Record<Locale, SiteDictionary> = {
       instantTitle: "Быстрый контакт без форм",
       instantSubtitle: "Откроем мессенджер с готовым сообщением. От тебя 1 клик.",
       instantTelegram: "Написать в Telegram",
-      instantWhatsapp: "Написать в WhatsApp",
       instantPoints: ["Ответ в течение 1 рабочего дня", "NDA-first коммуникация", "Проектный процесс RU / EN"],
       privacyNote: "Нажимая кнопку, вы соглашаетесь на обработку данных для обратной связи.",
       success: "Заявка отправлена. Скоро свяжемся.",
@@ -297,7 +293,7 @@ export const dictionaries: Record<Locale, SiteDictionary> = {
     },
     hero: {
       kicker: "Xouston Design Lab",
-      title: "Digital products designed to convert and scale",
+      title: "Digital products built for growth and conversion",
       subtitle:
         "From strategy and design to release and support. Need only one role? We provide focused experts in DevOps, QA, and product design.",
       ctaPrimary: "Submit request",
@@ -396,7 +392,6 @@ export const dictionaries: Record<Locale, SiteDictionary> = {
       resultPrefix: "Estimated budget:",
       resultSuffix: "(range)",
       discussCta: "Discuss this range",
-      discussAltCta: "WhatsApp",
       quickHint: "The button sends a prefilled brief with selected options to messenger.",
       options: {
         type: ["Mobile app", "Website", "Telegram bot", "Dedicated specialist"],
@@ -419,7 +414,6 @@ export const dictionaries: Record<Locale, SiteDictionary> = {
       instantTitle: "Instant contact, no forms",
       instantSubtitle: "Open messenger with a prefilled message and send it in one tap.",
       instantTelegram: "Message via Telegram",
-      instantWhatsapp: "Message via WhatsApp",
       instantPoints: ["Response within one business day", "NDA-first communication", "RU / EN project workflow"],
       privacyNote: "By submitting, you agree to data processing for project communication.",
       success: "Request sent. We will contact you shortly.",

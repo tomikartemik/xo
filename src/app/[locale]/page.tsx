@@ -22,9 +22,9 @@ export default async function LocaleHome({
     locale === "ru"
       ? "Здравствуйте! Хочу обсудить проект и получить оценку."
       : "Hi! I want to discuss a project and get an estimate.";
-  const telegramHref = `${process.env.NEXT_PUBLIC_TELEGRAM_URL ?? "https://t.me/xouston"}?text=${encodeURIComponent(quickMessage)}`;
-  const whatsappBase = process.env.NEXT_PUBLIC_WHATSAPP_URL ?? "https://wa.me/00000000000";
-  const whatsappHref = `${whatsappBase}${whatsappBase.includes("?") ? "&" : "?"}text=${encodeURIComponent(quickMessage)}`;
+  const telegramHref = `${process.env.NEXT_PUBLIC_TELEGRAM_URL ?? "https://t.me/Xouston_Contact"}?text=${encodeURIComponent(
+    quickMessage,
+  )}`;
 
   return (
     <main className="pageShell">
@@ -66,6 +66,16 @@ export default async function LocaleHome({
           <p className="ctaInlineNote">{t.hero.ctaHint}</p>
         </div>
 
+        <div className="heroMetric tile reveal">
+          <p>24/7</p>
+          <span>{t.hero.metricSupport}</span>
+        </div>
+
+        <div className="heroMetric tile reveal">
+          <p>RU / EN</p>
+          <span>{t.hero.metricMarket}</span>
+        </div>
+
         <div className="heroAccent tile reveal">
           <p className="kicker">{t.hero.visualTitle}</p>
           <div className="accentWave">
@@ -78,16 +88,6 @@ export default async function LocaleHome({
               <li key={item}>{item}</li>
             ))}
           </ul>
-        </div>
-
-        <div className="heroMetric tile reveal">
-          <p>24/7</p>
-          <span>{t.hero.metricSupport}</span>
-        </div>
-
-        <div className="heroMetric tile reveal">
-          <p>RU / EN</p>
-          <span>{t.hero.metricMarket}</span>
         </div>
       </section>
 
@@ -203,9 +203,6 @@ export default async function LocaleHome({
           <div className="instantActions">
             <a href={telegramHref} target="_blank" rel="noreferrer" className="instantBtn telegram">
               {t.leadForm.instantTelegram}
-            </a>
-            <a href={whatsappHref} target="_blank" rel="noreferrer" className="instantBtn whatsapp">
-              {t.leadForm.instantWhatsapp}
             </a>
           </div>
           <p className="privacyNote">{t.leadForm.privacyNote}</p>

@@ -1,0 +1,238 @@
+import Link from "next/link";
+import { EstimateForm } from "@/components/EstimateForm";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { dictionaries, posts } from "@/content/site";
+import { isLocale, type Locale } from "@/lib/i18n";
+import { notFound } from "next/navigation";
+
+export default async function LocaleHome({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+
+  if (!isLocale(locale)) {
+    notFound();
+  }
+
+  const t = dictionaries[locale as Locale];
+  const localPosts = posts[locale as Locale];
+  const quickMessage =
+    locale === "ru"
+      ? "Здравствуйте! Хочу обсудить проект и получить оценку."
+      : "Hi! I want to discuss a project and get an estimate.";
+  const telegramHref = `${process.env.NEXT_PUBLIC_TELEGRAM_URL ?? "https://t.me/xouston"}?text=${encodeURIComponent(quickMessage)}`;
+  const whatsappBase = process.env.NEXT_PUBLIC_WHATSAPP_URL ?? "https://wa.me/00000000000";
+  const whatsappHref = `${whatsappBase}${whatsappBase.includes("?") ? "&" : "?"}text=${encodeURIComponent(quickMessage)}`;
+
+  return (
+    <main className="pageShell">
+      <header className="topNav">
+        <Link href={`/${locale}`} className="logo">
+          <span className="logoMark">XO</span>
+          <span className="logoText">Xouston</span>
+        </Link>
+
+        <nav>
+          <a href="#services" className="navLink">{t.nav.services}</a>
+          <a href="#approach" className="navLink">{t.nav.approach}</a>
+          <a href="#estimate" className="navLink">{t.nav.estimate}</a>
+          <Link href={`/${locale}/blog`} className="navLink">{t.nav.blog}</Link>
+          <a href="#contact" className="navLink navCta">{t.nav.contact}</a>
+        </nav>
+
+        <LanguageSwitcher currentLocale={locale} />
+      </header>
+
+      <section className="hero blockGrid">
+        <div className="heroMain tile reveal">
+          <p className="kicker">{t.hero.kicker}</p>
+          <h1>{t.hero.title}</h1>
+          <p>{t.hero.subtitle}</p>
+          <div className="heroChips">
+            {t.hero.chips.map((chip) => (
+              <span key={chip}>{chip}</span>
+            ))}
+          </div>
+          <div className="heroActions">
+            <a href="#contact" className="btnPrimary">
+              {t.hero.ctaPrimary}
+            </a>
+            <a href="#estimate" className="btnGhost">
+              {t.hero.ctaSecondary}
+            </a>
+          </div>
+          <p className="ctaInlineNote">{t.hero.ctaHint}</p>
+        </div>
+
+        <div className="heroAccent tile reveal">
+          <p className="kicker">{t.hero.visualTitle}</p>
+          <div className="accentWave">
+            <span className="waveLine one" />
+            <span className="waveLine two" />
+            <span className="waveLine three" />
+          </div>
+          <ul className="accentList">
+            {t.hero.visualItems.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="heroMetric tile reveal">
+          <p>24/7</p>
+          <span>{t.hero.metricSupport}</span>
+        </div>
+
+        <div className="heroMetric tile reveal">
+          <p>RU / EN</p>
+          <span>{t.hero.metricMarket}</span>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="sectionHeading">
+          <div>
+            <h2>{t.proof.title}</h2>
+            <p>{t.proof.subtitle}</p>
+          </div>
+        </div>
+        <div className="proofGrid">
+          {t.proof.items.map((item, idx) => (
+            <article key={item.metric + item.context} className="tile proofCard reveal">
+              <span className="cardTag">
+                {t.labels.caseLabel} 0{idx + 1}
+              </span>
+              <p className="proofMetric">{item.metric}</p>
+              <h3>{item.context}</h3>
+              <p>{item.note}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="services" className="section">
+        <h2>{t.nav.services}</h2>
+        <div className="serviceGrid">
+          {t.serviceCards.map((card, idx) => (
+            <article key={card.title} className="tile serviceCard reveal">
+              <span className="cardTag">0{idx + 1}</span>
+              <h3>{card.title}</h3>
+              <p>{card.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="approach" className="section splitSection">
+        <div className="tile trustCard reveal">
+          <h2>{t.trust.title}</h2>
+          <ul>
+            {t.trust.points.map((point) => (
+              <li key={point}>{point}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="tile ndaCard reveal">
+          <h3>{t.trust.ndaTitle}</h3>
+          <p>{t.trust.ndaText}</p>
+        </div>
+      </section>
+
+      <section className="section">
+        <h2>{t.process.title}</h2>
+        <div className="processGrid">
+          {t.process.steps.map((step) => (
+            <article key={step.title} className="tile stepCard reveal">
+              <h3>{step.title}</h3>
+              <p>{step.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="estimate" className="section splitSection estimateSection">
+        <div className="tile reveal estimateIntro">
+          <h2>{t.estimate.title}</h2>
+          <p>{t.estimate.subtitle}</p>
+          <ul className="estimateTracks">
+            {t.estimate.highlights.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
+        <div className="tile reveal estimatePanel">
+          <EstimateForm locale={locale} labels={t.estimate} />
+        </div>
+      </section>
+
+      <section className="section" id="blog">
+        <div className="sectionHeading">
+          <div>
+            <h2>{t.blog.title}</h2>
+            <p>{t.blog.subtitle}</p>
+          </div>
+          <Link href={`/${locale}/blog`} className="textLink">
+            {t.blog.allPosts}
+          </Link>
+        </div>
+
+        <div className="blogGrid">
+          {localPosts.map((post, idx) => (
+            <Link href={`/${locale}/blog/${post.slug}`} className="tile postCard reveal" key={post.slug}>
+              <span className="cardTag">
+                {t.labels.articleLabel} 0{idx + 1}
+              </span>
+              <p className="postMeta">
+                {post.date} · {post.readTime}
+              </p>
+              <h3>{post.title}</h3>
+              <p>{post.excerpt}</p>
+              <span className="postArrow">→</span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section id="contact" className="section splitSection">
+        <div className="tile reveal">
+          <h2>{t.leadForm.instantTitle}</h2>
+          <p>{t.leadForm.instantSubtitle}</p>
+          <div className="instantActions">
+            <a href={telegramHref} target="_blank" rel="noreferrer" className="instantBtn telegram">
+              {t.leadForm.instantTelegram}
+            </a>
+            <a href={whatsappHref} target="_blank" rel="noreferrer" className="instantBtn whatsapp">
+              {t.leadForm.instantWhatsapp}
+            </a>
+          </div>
+          <p className="privacyNote">{t.leadForm.privacyNote}</p>
+        </div>
+        <div className="tile reveal contactTrust">
+          <h3>{t.leadForm.title}</h3>
+          <p>{t.leadForm.subtitle}</p>
+          <ul>
+            {t.leadForm.instantPoints.map((point) => (
+              <li key={point}>{point}</li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <footer className="footer">
+        <p>© {new Date().getFullYear()} Xouston. {t.footer.rights}</p>
+        <div className="footerLinks">
+          <Link href={`/${locale}/privacy`}>{t.legal.privacy}</Link>
+          <Link href={`/${locale}/terms`}>{t.legal.terms}</Link>
+          <Link href={`/${locale}/cookies`}>{t.legal.cookies}</Link>
+        </div>
+      </footer>
+
+      <a href="#contact" className="mobileStickyCta">
+        {t.leadForm.stickyCta}
+      </a>
+    </main>
+  );
+}

@@ -71,6 +71,7 @@ button:focus-visible,
   justify-content: space-between;
   backdrop-filter: blur(14px);
   box-shadow: 0 10px 24px rgba(16, 52, 104, 0.1);
+  gap: 0.55rem;
 }
 
 .logo {
@@ -129,6 +130,7 @@ button:focus-visible,
   padding: 0.2rem;
   border-radius: 12px;
   background: var(--surface);
+  flex-shrink: 0;
 }
 
 .langOption {
@@ -323,6 +325,11 @@ button {
   padding: 0.78rem 1.04rem;
   font-weight: 700;
   transition: transform 0.16s ease, background-color 0.16s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  text-align: center;
 }
 
 .btnPrimary,
@@ -450,14 +457,14 @@ button:hover {
 }
 
 .serviceCard:nth-child(4) p {
-  margin-top: 0.55rem;
+  margin-top: 0.85rem;
   margin-bottom: 0;
-  align-self: auto;
+  align-self: flex-start;
 }
 
 .serviceCard:nth-child(4) {
-  min-height: 11rem;
-  justify-content: center;
+  min-height: auto;
+  justify-content: flex-start;
 }
 
 .cardTag {
@@ -797,13 +804,13 @@ textarea {
 }
 
 .instantActions {
-  margin-top: 1rem;
+  margin-top: 1.15rem;
   display: grid;
   gap: 0.65rem;
 }
 
 .instantBtn {
-  min-height: 2.95rem;
+  min-height: 3.05rem;
   border-radius: 12px;
   font-weight: 700;
   display: inline-flex;
@@ -812,8 +819,7 @@ textarea {
   border: 1px solid var(--line);
   transition: transform 0.14s ease, box-shadow 0.14s ease;
   position: relative;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding: 0 1rem;
 }
 
 .instantBtn.telegram {
@@ -828,16 +834,31 @@ textarea {
 }
 
 .contactTrust ul {
-  margin-top: 0.8rem;
-  padding-left: 1rem;
+  margin-top: 0.9rem;
+  padding-left: 0;
   display: grid;
   gap: 0.55rem;
+  list-style: none;
+}
+
+.contactTrust li {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #f7faff;
+  padding: 0.52rem 0.72rem;
 }
 
 .contactTrust {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 0.35rem;
+  background: linear-gradient(180deg, #ffffff 0%, #f4f9ff 100%);
+  border-color: #cbdcf6;
+}
+
+.contactSection {
+  align-items: stretch;
 }
 
 .footerLinks {
@@ -1077,6 +1098,20 @@ textarea {
   }
 }
 
+@media (max-width: 760px) {
+  .heroActions {
+    flex-direction: column;
+    gap: 0.55rem;
+    width: 100%;
+  }
+
+  .heroActions .btnPrimary,
+  .heroActions .btnGhost {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
 @media (max-width: 640px) {
   .logoText {
     display: none;
@@ -1103,6 +1138,28 @@ textarea {
     font-size: 0.98rem;
   }
 
+  .heroActions {
+    flex-direction: column;
+    gap: 0.55rem;
+    width: 100%;
+  }
+
+  .heroActions .btnPrimary,
+  .heroActions .btnGhost {
+    width: 100%;
+    min-width: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .heroMain h1 {
+    text-wrap: balance;
+    word-break: normal;
+  }
+
   .optionRow {
     gap: 0.45rem;
   }
@@ -1119,16 +1176,18 @@ textarea {
   }
 
   h1 {
-    font-size: clamp(1.2rem, 7.2vw, 1.6rem);
+    font-size: clamp(1.02rem, 6.4vw, 1.36rem);
     max-width: 100%;
-    line-height: 1.03;
+    line-height: 1.08;
     letter-spacing: -0.01em;
     overflow-wrap: anywhere;
   }
 
   .heroChips span {
-    font-size: 0.7rem;
-    padding: 0.24rem 0.48rem;
+    font-size: 0.68rem;
+    padding: 0.22rem 0.46rem;
+    max-width: 100%;
+    overflow-wrap: anywhere;
   }
 
   .estimateIntro li {
@@ -1138,6 +1197,10 @@ textarea {
 
   .messengers {
     flex-wrap: wrap;
+  }
+
+  .contactTrust {
+    justify-content: flex-start;
   }
 }
 

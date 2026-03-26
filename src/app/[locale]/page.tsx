@@ -196,7 +196,7 @@ export default async function LocaleHome({
         </div>
       </section>
 
-      <section id="contact" className="section splitSection">
+      <section id="contact" className="section splitSection contactSection">
         <div className="tile reveal">
           <h2>{t.leadForm.instantTitle}</h2>
           <p>{t.leadForm.instantSubtitle}</p>

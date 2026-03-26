@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { EstimateForm } from "@/components/EstimateForm";
-import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { SiteHeader } from "@/components/SiteHeader";
 import { dictionaries, posts } from "@/content/site";
 import { isLocale, type Locale } from "@/lib/i18n";
 import { notFound } from "next/navigation";
@@ -28,22 +28,7 @@ export default async function LocaleHome({
 
   return (
     <main className="pageShell">
-      <header className="topNav">
-        <Link href={`/${locale}`} className="logo">
-          <span className="logoMark">XO</span>
-          <span className="logoText">Xouston</span>
-        </Link>
-
-        <nav>
-          <a href="#services" className="navLink">{t.nav.services}</a>
-          <a href="#approach" className="navLink">{t.nav.approach}</a>
-          <a href="#estimate" className="navLink">{t.nav.estimate}</a>
-          <Link href={`/${locale}/blog`} className="navLink">{t.nav.blog}</Link>
-          <a href="#contact" className="navLink navCta">{t.nav.contact}</a>
-        </nav>
-
-        <LanguageSwitcher currentLocale={locale} />
-      </header>
+      <SiteHeader locale={locale} nav={t.nav} />
 
       <section className="hero blockGrid">
         <div className="heroMain tile reveal">

@@ -257,6 +257,84 @@ button:focus-visible,
   box-shadow: var(--shadow);
 }
 
+.hoverTile {
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease;
+}
+
+.hoverTile h2,
+.hoverTile h3,
+.hoverTile p,
+.hoverTile li,
+.hoverTile span,
+.hoverTile .proofMetric,
+.hoverTile .postMeta,
+.hoverTile .postArrow {
+  transition: color 0.18s ease, background-color 0.18s ease, border-color 0.18s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hoverTile:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(145deg, #1f73dd 0%, #0f67d6 58%, #0b56c2 100%);
+    border-color: #0e60ca;
+    box-shadow: 0 20px 40px rgba(15, 75, 166, 0.24);
+    color: #f8fbff;
+  }
+
+  .hoverTile:hover h2,
+  .hoverTile:hover h3,
+  .hoverTile:hover p,
+  .hoverTile:hover li,
+  .hoverTile:hover span,
+  .hoverTile:hover .proofMetric,
+  .hoverTile:hover .postMeta,
+  .hoverTile:hover .postArrow,
+  .hoverTile:hover .sectionHeading p,
+  .hoverTile:hover .accentList li {
+    color: #f8fbff;
+  }
+
+  .hoverTile:hover .cardTag {
+    border-color: rgba(255, 255, 255, 0.34);
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+  }
+
+  .hoverTile:hover .contactTrust li {
+    border-color: rgba(255, 255, 255, 0.22);
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+  }
+
+  .hoverTile:hover .accentList li::before {
+    background: #ffffff;
+  }
+
+  .postCard.hoverTile:hover,
+  .serviceCard.hoverTile:hover,
+  .heroAccent.hoverTile:hover {
+    background: linear-gradient(145deg, #1f73dd 0%, #0f67d6 58%, #0b56c2 100%);
+  }
+
+  .blogGrid .postCard.hoverTile:hover:first-child {
+    background: linear-gradient(145deg, #1f73dd 0%, #0f67d6 58%, #0b56c2 100%);
+  }
+
+  .heroAccent.hoverTile:hover .accentWave {
+    border-color: rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .heroAccent.hoverTile:hover .waveLine {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.55) 0%, #ffffff 45%, rgba(255, 255, 255, 0.7) 100%);
+  }
+}
+
 .heroMain {
   min-height: 23rem;
   display: grid;
@@ -531,35 +609,25 @@ button:hover {
   display: flex;
   flex-direction: column;
   min-height: 15rem;
+  justify-content: flex-end;
+  gap: 0.55rem;
+  padding-top: 4.3rem;
 }
 
 .serviceCard p {
-  margin-top: 0.85rem;
+  margin-top: 0;
   margin-bottom: 0;
 }
 
-/* Top row balancing: use the longest-text card as baseline and offset shorter ones */
-.serviceCard:nth-child(1) p {
-  margin-top: 1.35rem;
-}
-
-.serviceCard:nth-child(2) p {
-  margin-top: 1.1rem;
-}
-
-.serviceCard:nth-child(3) p {
-  margin-top: 0.85rem;
-}
-
 .serviceCard:nth-child(4) p {
-  margin-top: 0.85rem;
+  margin-top: 0;
   margin-bottom: 0;
   align-self: flex-start;
 }
 
 .serviceCard:nth-child(4) {
-  min-height: auto;
-  justify-content: flex-start;
+  min-height: 11rem;
+  justify-content: flex-end;
 }
 
 .cardTag {
@@ -578,6 +646,14 @@ button:hover {
   letter-spacing: 0.03em;
 }
 
+.serviceCard .cardTag,
+.proofCard .cardTag,
+.postCard .cardTag {
+  position: absolute;
+  top: 1.2rem;
+  left: 1.2rem;
+}
+
 .serviceCard h3,
 .proofCard h3,
 .postCard h3 {
@@ -585,7 +661,7 @@ button:hover {
 }
 
 .serviceCard h3 {
-  margin-top: 0.7rem;
+  margin-top: 0.2rem;
 }
 
 .proofCard h3 {
@@ -678,6 +754,7 @@ button:hover {
   align-content: space-between;
   border-color: var(--line);
   background: #ffffff;
+  padding-top: 4.3rem;
 }
 
 .proofCard:nth-child(1) {
@@ -823,7 +900,7 @@ textarea {
   font-size: 0.79rem;
   color: #4f6078;
   line-height: 1.35;
-  margin-top: 0.95rem;
+  margin-top: 0;
 }
 
 .sectionHeading {
@@ -852,6 +929,7 @@ textarea {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: grid;
   gap: 0.38rem;
+  padding-top: 4.3rem;
 }
 
 .postCard:hover {
@@ -907,6 +985,51 @@ textarea {
   margin-top: 1.15rem;
   display: grid;
   gap: 0.65rem;
+}
+
+.contactInstant {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  gap: 1.2rem;
+}
+
+.contactInstantTop {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.contactInstantFoot {
+  margin-top: auto;
+  display: grid;
+  gap: 0.8rem;
+  padding: 1rem;
+  border: 1px solid #d6e3f6;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #f8fbff 0%, #f2f7ff 100%);
+}
+
+.contactInstant .instantActions {
+  margin-top: 0;
+}
+
+.contactInstantMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.contactInstantMeta span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.32rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid #d2dff4;
+  background: #ffffff;
+  color: #48617f;
+  font-size: 0.78rem;
+  line-height: 1.2;
 }
 
 .instantBtn {
@@ -1148,6 +1271,13 @@ textarea {
     border-radius: 18px;
   }
 
+  .serviceCard .cardTag,
+  .proofCard .cardTag,
+  .postCard .cardTag {
+    top: 1rem;
+    left: 1rem;
+  }
+
   h1 {
     font-size: clamp(1.08rem, 5.1vw, 1.38rem);
     max-width: 100%;
@@ -1201,11 +1331,11 @@ textarea {
   .serviceCard:nth-child(2) p,
   .serviceCard:nth-child(3) p,
   .serviceCard:nth-child(4) p {
-    margin-top: 0.85rem;
+    margin-top: 0;
   }
 
   .serviceCard:nth-child(4) p {
-    margin-top: 0.85rem;
+    margin-top: 0;
     align-self: auto;
   }
 
@@ -1427,6 +1557,20 @@ textarea {
 
   .contactTrust {
     justify-content: flex-start;
+  }
+
+  .contactInstant {
+    gap: 1rem;
+  }
+
+  .contactInstantFoot {
+    padding: 0.85rem;
+    border-radius: 16px;
+  }
+
+  .contactInstantMeta span {
+    font-size: 0.74rem;
+    min-height: 1.9rem;
   }
 }
 

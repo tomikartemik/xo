@@ -51,17 +51,12 @@ export default async function LocaleHome({
           <p className="ctaInlineNote">{t.hero.ctaHint}</p>
         </div>
 
-        <div className="heroMetric tile reveal">
+        <div className="heroMetric tile hoverTile reveal">
           <p>24/7</p>
           <span>{t.hero.metricSupport}</span>
         </div>
 
-        <div className="heroMetric tile reveal">
-          <p>RU / EN</p>
-          <span>{t.hero.metricMarket}</span>
-        </div>
-
-        <div className="heroAccent tile reveal">
+        <div className="heroAccent tile hoverTile reveal">
           <p className="kicker">{t.hero.visualTitle}</p>
           <div className="accentWave">
             <span className="waveLine one" />
@@ -74,6 +69,11 @@ export default async function LocaleHome({
             ))}
           </ul>
         </div>
+
+        <div className="heroMetric tile hoverTile reveal">
+          <p>RU / EN</p>
+          <span>{t.hero.metricMarket}</span>
+        </div>
       </section>
 
       <section className="section">
@@ -85,7 +85,7 @@ export default async function LocaleHome({
         </div>
         <div className="proofGrid">
           {t.proof.items.map((item, idx) => (
-            <article key={item.metric + item.context} className="tile proofCard reveal">
+            <article key={item.metric + item.context} className="tile proofCard hoverTile reveal">
               <span className="cardTag">
                 {t.labels.caseLabel} 0{idx + 1}
               </span>
@@ -101,7 +101,7 @@ export default async function LocaleHome({
         <h2>{t.nav.services}</h2>
         <div className="serviceGrid">
           {t.serviceCards.map((card, idx) => (
-            <article key={card.title} className="tile serviceCard reveal">
+            <article key={card.title} className="tile serviceCard hoverTile reveal">
               <span className="cardTag">0{idx + 1}</span>
               <h3>{card.title}</h3>
               <p>{card.text}</p>
@@ -111,7 +111,7 @@ export default async function LocaleHome({
       </section>
 
       <section id="approach" className="section splitSection">
-        <div className="tile trustCard reveal">
+        <div className="tile trustCard hoverTile reveal">
           <h2>{t.trust.title}</h2>
           <ul>
             {t.trust.points.map((point) => (
@@ -120,7 +120,7 @@ export default async function LocaleHome({
           </ul>
         </div>
 
-        <div className="tile ndaCard reveal">
+        <div className="tile ndaCard hoverTile reveal">
           <h3>{t.trust.ndaTitle}</h3>
           <p>{t.trust.ndaText}</p>
         </div>
@@ -130,7 +130,7 @@ export default async function LocaleHome({
         <h2>{t.process.title}</h2>
         <div className="processGrid">
           {t.process.steps.map((step) => (
-            <article key={step.title} className="tile stepCard reveal">
+            <article key={step.title} className="tile stepCard hoverTile reveal">
               <h3>{step.title}</h3>
               <p>{step.text}</p>
             </article>
@@ -166,7 +166,7 @@ export default async function LocaleHome({
 
         <div className="blogGrid">
           {localPosts.map((post, idx) => (
-            <Link href={`/${locale}/blog/${post.slug}`} className="tile postCard reveal" key={post.slug}>
+            <Link href={`/${locale}/blog/${post.slug}`} className="tile postCard hoverTile reveal" key={post.slug}>
               <span className="cardTag">
                 {t.labels.articleLabel} 0{idx + 1}
               </span>
@@ -182,13 +182,22 @@ export default async function LocaleHome({
       </section>
 
       <section id="contact" className="section splitSection contactSection">
-        <div className="tile reveal">
-          <h2>{t.leadForm.instantTitle}</h2>
-          <p>{t.leadForm.instantSubtitle}</p>
-          <div className="instantActions">
-            <a href={telegramHref} target="_blank" rel="noreferrer" className="instantBtn telegram">
-              {t.leadForm.instantTelegram}
-            </a>
+        <div className="tile reveal contactInstant">
+          <div className="contactInstantTop">
+            <h2>{t.leadForm.instantTitle}</h2>
+            <p>{t.leadForm.instantSubtitle}</p>
+          </div>
+          <div className="contactInstantFoot">
+            <div className="instantActions">
+              <a href={telegramHref} target="_blank" rel="noreferrer" className="instantBtn telegram">
+                {t.leadForm.instantTelegram}
+              </a>
+            </div>
+            <div className="contactInstantMeta">
+              {t.leadForm.instantPoints.slice(0, 3).map((point) => (
+                <span key={point}>{point}</span>
+              ))}
+            </div>
           </div>
           <p className="privacyNote">{t.leadForm.privacyNote}</p>
         </div>

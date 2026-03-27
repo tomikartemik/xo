@@ -193,11 +193,6 @@ export default async function LocaleHome({
                 {t.leadForm.instantTelegram}
               </a>
             </div>
-            <div className="contactInstantMeta">
-              {t.leadForm.instantPoints.slice(0, 3).map((point) => (
-                <span key={point}>{point}</span>
-              ))}
-            </div>
           </div>
           <p className="privacyNote">{t.leadForm.privacyNote}</p>
         </div>

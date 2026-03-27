@@ -681,6 +681,7 @@ button:hover {
 .estimateIntro {
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
   gap: 0.9rem;
   background: #ffffff;
   border-color: var(--line);
@@ -1013,25 +1014,6 @@ textarea {
   margin-top: 0;
 }
 
-.contactInstantMeta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem;
-}
-
-.contactInstantMeta span {
-  display: inline-flex;
-  align-items: center;
-  min-height: 2rem;
-  padding: 0.32rem 0.65rem;
-  border-radius: 999px;
-  border: 1px solid #d2dff4;
-  background: #ffffff;
-  color: #48617f;
-  font-size: 0.78rem;
-  line-height: 1.2;
-}
-
 .instantBtn {
   min-height: 3.05rem;
   border-radius: 12px;
@@ -1343,6 +1325,10 @@ textarea {
     margin-bottom: 0;
   }
 
+  .estimateIntro {
+    justify-content: flex-start;
+  }
+
   .mobileStickyCta {
     position: fixed;
     left: 0.65rem;
@@ -1566,11 +1552,6 @@ textarea {
   .contactInstantFoot {
     padding: 0.85rem;
     border-radius: 16px;
-  }
-
-  .contactInstantMeta span {
-    font-size: 0.74rem;
-    min-height: 1.9rem;
   }
 }
 

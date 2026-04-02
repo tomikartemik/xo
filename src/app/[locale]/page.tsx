@@ -22,7 +22,7 @@ export default async function LocaleHome({
     locale === "ru"
       ? "Здравствуйте! Хочу обсудить проект и получить оценку."
       : "Hi! I want to discuss a project and get an estimate.";
-  const telegramHref = `${process.env.NEXT_PUBLIC_TELEGRAM_URL ?? "https://t.me/Xouston_Contact"}?text=${encodeURIComponent(
+  const telegramHref = `${process.env.NEXT_PUBLIC_TELEGRAM_URL ?? "https://t.me/XO_Contact"}?text=${encodeURIComponent(
     quickMessage,
   )}`;
 

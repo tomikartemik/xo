@@ -67,7 +67,7 @@ export function EstimateForm({ locale, labels }: EstimateProps) {
     return lines.join("\n");
   }, [complexityIdx, estimate, integrationsIdx, labels.options, locale, timelineIdx, typeIdx]);
 
-  const telegramHref = `${process.env.NEXT_PUBLIC_TELEGRAM_URL ?? "https://t.me/Xouston_Contact"}?text=${encodeURIComponent(
+  const telegramHref = `${process.env.NEXT_PUBLIC_TELEGRAM_URL ?? "https://t.me/XO_Contact"}?text=${encodeURIComponent(
     briefMessage,
   )}`;
 

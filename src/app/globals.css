@@ -279,40 +279,40 @@ button:focus-visible,
 
 @media (hover: hover) and (pointer: fine) {
   .hoverTile:hover {
-    transform: translateY(-1px);
-    background: linear-gradient(145deg, #fbfdff 0%, #eef5ff 58%, #e6f0ff 100%);
-    border-color: #afcaf0;
-    box-shadow: 0 14px 28px rgba(16, 52, 104, 0.12);
+    transform: none;
+    background: #fcfdff;
+    border-color: #c7d9f3;
+    box-shadow: 0 12px 24px rgba(16, 52, 104, 0.08);
   }
 
   .postCard.hoverTile:hover,
   .serviceCard.hoverTile:hover,
   .heroAccent.hoverTile:hover {
-    background: linear-gradient(145deg, #fbfdff 0%, #eef5ff 58%, #e6f0ff 100%);
+    background: #fcfdff;
   }
 
   .blogGrid .postCard.hoverTile:hover:first-child {
-    background: linear-gradient(145deg, #fbfdff 0%, #eef5ff 58%, #e6f0ff 100%);
+    background: #fcfdff;
   }
 
   .heroAccent.hoverTile:hover .accentWave {
-    border-color: #bfd4f3;
-    background: rgba(255, 255, 255, 0.7);
+    border-color: #d3e0f4;
+    background: #f7fbff;
   }
 
   .heroAccent.hoverTile:hover .waveLine {
-    background: linear-gradient(90deg, #bfd7fb 0%, #79acef 45%, #d6e7ff 100%);
+    background: linear-gradient(90deg, #c9ddfb 0%, #9dc0f1 45%, #dce9ff 100%);
   }
 
   .hoverTile:hover .cardTag {
-    border-color: #9fc1ef;
-    background: #f3f8ff;
-    color: #245497;
+    border-color: #bdd2f1;
+    background: #f6faff;
+    color: #2f5f9f;
   }
 
   .hoverTile:hover .contactTrust li {
-    border-color: #c8daf5;
-    background: rgba(255, 255, 255, 0.78);
+    border-color: #d4e1f4;
+    background: #f8fbff;
   }
 }
 
@@ -1379,14 +1379,31 @@ textarea {
   .serviceCard,
   .proofCard,
   .postCard {
-    padding-top: 4.9rem;
+    padding-top: 1rem;
   }
 
   .serviceCard .cardTag,
   .proofCard .cardTag,
   .postCard .cardTag {
-    top: 0.9rem;
-    left: 0.9rem;
+    position: static;
+    top: auto;
+    left: auto;
+    margin-bottom: 0.35rem;
+    align-self: flex-start;
+  }
+
+  .proofCard {
+    gap: 0.7rem;
+  }
+
+  .proofMetric {
+    font-size: clamp(1.9rem, 11vw, 3rem);
+  }
+
+  .proofCard h3,
+  .postCard h3,
+  .serviceCard h3 {
+    margin-top: 0;
   }
 
   .btnPrimary,

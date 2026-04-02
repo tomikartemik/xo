@@ -279,40 +279,40 @@ button:focus-visible,
 
 @media (hover: hover) and (pointer: fine) {
   .hoverTile:hover {
-    transform: none;
-    background: #fcfdff;
-    border-color: #c7d9f3;
-    box-shadow: 0 12px 24px rgba(16, 52, 104, 0.08);
+    transform: translateY(-2px);
+    background: linear-gradient(145deg, #ffffff 0%, #f2f7ff 58%, #ebf3ff 100%);
+    border-color: #aecaef;
+    box-shadow: 0 16px 30px rgba(16, 52, 104, 0.12);
   }
 
   .postCard.hoverTile:hover,
   .serviceCard.hoverTile:hover,
   .heroAccent.hoverTile:hover {
-    background: #fcfdff;
+    background: linear-gradient(145deg, #ffffff 0%, #f2f7ff 58%, #ebf3ff 100%);
   }
 
   .blogGrid .postCard.hoverTile:hover:first-child {
-    background: #fcfdff;
+    background: linear-gradient(145deg, #ffffff 0%, #f2f7ff 58%, #ebf3ff 100%);
   }
 
   .heroAccent.hoverTile:hover .accentWave {
-    border-color: #d3e0f4;
-    background: #f7fbff;
+    border-color: #bdd3f2;
+    background: rgba(255, 255, 255, 0.82);
   }
 
   .heroAccent.hoverTile:hover .waveLine {
-    background: linear-gradient(90deg, #c9ddfb 0%, #9dc0f1 45%, #dce9ff 100%);
+    background: linear-gradient(90deg, #bfd7fb 0%, #84b2f0 45%, #d4e6ff 100%);
   }
 
   .hoverTile:hover .cardTag {
-    border-color: #bdd2f1;
-    background: #f6faff;
-    color: #2f5f9f;
+    border-color: #9fc1ef;
+    background: #edf5ff;
+    color: #245497;
   }
 
   .hoverTile:hover .contactTrust li {
-    border-color: #d4e1f4;
-    background: #f8fbff;
+    border-color: #c8daf5;
+    background: rgba(240, 247, 255, 0.92);
   }
 }
 

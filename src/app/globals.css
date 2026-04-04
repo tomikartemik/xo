@@ -259,11 +259,11 @@ button:focus-visible,
 
 .hoverTile {
   transition:
-    transform 0.28s ease,
-    box-shadow 0.28s ease,
-    background 0.28s ease,
-    border-color 0.28s ease,
-    color 0.28s ease;
+    transform 0.42s ease,
+    box-shadow 0.42s ease,
+    background 0.42s ease,
+    border-color 0.42s ease,
+    color 0.42s ease;
 }
 
 .hoverTile h2,
@@ -274,45 +274,64 @@ button:focus-visible,
 .hoverTile .proofMetric,
 .hoverTile .postMeta,
 .hoverTile .postArrow {
-  transition: color 0.18s ease, background-color 0.18s ease, border-color 0.18s ease;
+  transition: color 0.42s ease, background-color 0.42s ease, border-color 0.42s ease;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .hoverTile:hover {
-    transform: translateY(-2px);
-    background: linear-gradient(145deg, #ffffff 0%, #f2f7ff 58%, #ebf3ff 100%);
-    border-color: #aecaef;
-    box-shadow: 0 16px 30px rgba(16, 52, 104, 0.12);
+    transform: translateY(-1px);
+    background: linear-gradient(145deg, #1f73dd 0%, #0f67d6 58%, #0b56c2 100%);
+    border-color: #0e60ca;
+    box-shadow: 0 16px 30px rgba(15, 75, 166, 0.18);
+    color: #f8fbff;
+  }
+
+  .hoverTile:hover h2,
+  .hoverTile:hover h3,
+  .hoverTile:hover p,
+  .hoverTile:hover li,
+  .hoverTile:hover span,
+  .hoverTile:hover .proofMetric,
+  .hoverTile:hover .postMeta,
+  .hoverTile:hover .postArrow,
+  .hoverTile:hover .sectionHeading p,
+  .hoverTile:hover .accentList li {
+    color: #f8fbff;
   }
 
   .postCard.hoverTile:hover,
   .serviceCard.hoverTile:hover,
   .heroAccent.hoverTile:hover {
-    background: linear-gradient(145deg, #ffffff 0%, #f2f7ff 58%, #ebf3ff 100%);
+    background: linear-gradient(145deg, #1f73dd 0%, #0f67d6 58%, #0b56c2 100%);
   }
 
   .blogGrid .postCard.hoverTile:hover:first-child {
-    background: linear-gradient(145deg, #ffffff 0%, #f2f7ff 58%, #ebf3ff 100%);
+    background: linear-gradient(145deg, #1f73dd 0%, #0f67d6 58%, #0b56c2 100%);
   }
 
   .heroAccent.hoverTile:hover .accentWave {
-    border-color: #bdd3f2;
-    background: rgba(255, 255, 255, 0.82);
+    border-color: rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.08);
   }
 
   .heroAccent.hoverTile:hover .waveLine {
-    background: linear-gradient(90deg, #bfd7fb 0%, #84b2f0 45%, #d4e6ff 100%);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.55) 0%, #ffffff 45%, rgba(255, 255, 255, 0.7) 100%);
   }
 
   .hoverTile:hover .cardTag {
-    border-color: #9fc1ef;
-    background: #edf5ff;
-    color: #245497;
+    border-color: rgba(255, 255, 255, 0.34);
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
   }
 
   .hoverTile:hover .contactTrust li {
-    border-color: #c8daf5;
-    background: rgba(240, 247, 255, 0.92);
+    border-color: rgba(255, 255, 255, 0.22);
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+  }
+
+  .hoverTile:hover .accentList li::before {
+    background: #ffffff;
   }
 }
 

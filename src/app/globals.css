@@ -256,7 +256,8 @@ button:focus-visible,
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(145deg, rgba(31, 115, 221, 0.72) 0%, rgba(15, 103, 214, 0.84) 58%, rgba(11, 86, 194, 0.78) 100%);
+  z-index: 0;
+  background: linear-gradient(145deg, rgba(31, 115, 221, 0.88) 0%, rgba(15, 103, 214, 0.94) 58%, rgba(11, 86, 194, 0.9) 100%);
   opacity: 0;
   pointer-events: none;
   transition: opacity 1.15s cubic-bezier(0.22, 1, 0.36, 1);
@@ -328,6 +329,8 @@ button:focus-visible,
   .hoverTile:hover .sectionHeading p,
   .hoverTile:hover .accentList li {
     color: #f8fbff;
+    position: relative;
+    z-index: 1;
   }
 
   .postCard.hoverTile:hover,
@@ -353,16 +356,25 @@ button:focus-visible,
     border-color: rgba(255, 255, 255, 0.34);
     background: rgba(255, 255, 255, 0.12);
     color: #ffffff;
+    position: relative;
+    z-index: 1;
   }
 
   .hoverTile:hover .contactTrust li {
     border-color: rgba(255, 255, 255, 0.22);
     background: rgba(255, 255, 255, 0.1);
     color: #ffffff;
+    position: relative;
+    z-index: 1;
   }
 
   .hoverTile:hover .accentList li::before {
     background: #ffffff;
+  }
+
+  .heroAccent.hoverTile:hover .accentWave {
+    position: relative;
+    z-index: 1;
   }
 }
 

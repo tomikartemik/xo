@@ -278,6 +278,11 @@ button:focus-visible,
   transition-delay: 18s;
 }
 
+.hoverTile > * {
+  position: relative;
+  z-index: 1;
+}
+
 .hoverTile h2,
 .hoverTile h3,
 .hoverTile p,
@@ -329,8 +334,6 @@ button:focus-visible,
   .hoverTile:hover .sectionHeading p,
   .hoverTile:hover .accentList li {
     color: #f8fbff;
-    position: relative;
-    z-index: 1;
   }
 
   .postCard.hoverTile:hover,
@@ -356,25 +359,16 @@ button:focus-visible,
     border-color: rgba(255, 255, 255, 0.34);
     background: rgba(255, 255, 255, 0.12);
     color: #ffffff;
-    position: relative;
-    z-index: 1;
   }
 
   .hoverTile:hover .contactTrust li {
     border-color: rgba(255, 255, 255, 0.22);
     background: rgba(255, 255, 255, 0.1);
     color: #ffffff;
-    position: relative;
-    z-index: 1;
   }
 
   .hoverTile:hover .accentList li::before {
     background: #ffffff;
-  }
-
-  .heroAccent.hoverTile:hover .accentWave {
-    position: relative;
-    z-index: 1;
   }
 }
 

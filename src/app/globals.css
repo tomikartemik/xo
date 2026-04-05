@@ -257,7 +257,7 @@ button:focus-visible,
   position: absolute;
   inset: 0;
   z-index: 0;
-  background: linear-gradient(145deg, rgba(31, 115, 221, 0.88) 0%, rgba(15, 103, 214, 0.94) 58%, rgba(11, 86, 194, 0.9) 100%);
+  background: linear-gradient(145deg, rgba(31, 115, 221, 0.94) 0%, rgba(15, 103, 214, 0.98) 58%, rgba(11, 86, 194, 0.95) 100%);
   opacity: 0;
   pointer-events: none;
   transition: opacity 1.15s cubic-bezier(0.22, 1, 0.36, 1);
@@ -308,7 +308,7 @@ button:focus-visible,
   .hoverTile:hover .proofMetric,
   .hoverTile:hover .postMeta,
   .hoverTile:hover .postArrow {
-    transition-duration: 0.38s;
+    transition-duration: 0.08s;
     transition-delay: 0s;
   }
 

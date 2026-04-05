@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { IBM_Plex_Sans } from "next/font/google";
+import { YandexMetrika } from "@/components/YandexMetrika";
 import "./globals.css";
 
 const ibmPlexSans = IBM_Plex_Sans({
@@ -26,7 +27,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={ibmPlexSans.variable}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <YandexMetrika />
+      </body>
     </html>
   );
 }

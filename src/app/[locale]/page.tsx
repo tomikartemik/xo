@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { EstimateForm } from "@/components/EstimateForm";
 import { SiteHeader } from "@/components/SiteHeader";
 import { dictionaries, posts } from "@/content/site";
 import { isLocale, type Locale } from "@/lib/i18n";
@@ -43,9 +42,6 @@ export default async function LocaleHome({
           <div className="heroActions">
             <a href="#contact" className="btnPrimary">
               {t.hero.ctaPrimary}
-            </a>
-            <a href="#estimate" className="btnGhost">
-              {t.hero.ctaSecondary}
             </a>
           </div>
           <p className="ctaInlineNote">{t.hero.ctaHint}</p>
@@ -135,21 +131,6 @@ export default async function LocaleHome({
               <p>{step.text}</p>
             </article>
           ))}
-        </div>
-      </section>
-
-      <section id="estimate" className="section splitSection estimateSection">
-        <div className="tile reveal estimateIntro">
-          <h2>{t.estimate.title}</h2>
-          <p>{t.estimate.subtitle}</p>
-          <ul className="estimateTracks">
-            {t.estimate.highlights.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </div>
-        <div className="tile reveal estimatePanel">
-          <EstimateForm locale={locale} labels={t.estimate} />
         </div>
       </section>
 

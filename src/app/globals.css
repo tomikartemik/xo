@@ -257,11 +257,12 @@ button:focus-visible,
   position: absolute;
   inset: 0;
   z-index: 0;
-  background: linear-gradient(145deg, rgba(31, 115, 221, 0.94) 0%, rgba(15, 103, 214, 0.98) 58%, rgba(11, 86, 194, 0.95) 100%);
-  opacity: 0;
+  background: linear-gradient(145deg, #1f73dd 0%, #0f67d6 58%, #0b56c2 100%);
+  opacity: 1;
   pointer-events: none;
-  transition: opacity 1.15s cubic-bezier(0.22, 1, 0.36, 1);
-  transition-delay: 18s;
+  transform: scaleY(0);
+  transform-origin: bottom center;
+  transition: transform 3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .tile:hover {
@@ -271,11 +272,9 @@ button:focus-visible,
 
 .hoverTile {
   transition:
-    box-shadow 1.15s cubic-bezier(0.22, 1, 0.36, 1),
-    border-color 1.15s cubic-bezier(0.22, 1, 0.36, 1),
-    background-color 1.15s cubic-bezier(0.22, 1, 0.36, 1),
-    color 1.15s cubic-bezier(0.22, 1, 0.36, 1);
-  transition-delay: 18s;
+    box-shadow 3s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 3s cubic-bezier(0.22, 1, 0.36, 1),
+    color 3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .hoverTile > * {
@@ -292,10 +291,9 @@ button:focus-visible,
 .hoverTile .postMeta,
 .hoverTile .postArrow {
   transition:
-    color 1.15s cubic-bezier(0.22, 1, 0.36, 1),
-    background-color 1.15s cubic-bezier(0.22, 1, 0.36, 1),
-    border-color 1.15s cubic-bezier(0.22, 1, 0.36, 1);
-  transition-delay: 18s;
+    color 3s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 3s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -308,8 +306,7 @@ button:focus-visible,
   .hoverTile:hover .proofMetric,
   .hoverTile:hover .postMeta,
   .hoverTile:hover .postArrow {
-    transition-duration: 0.08s;
-    transition-delay: 0s;
+    transition-duration: 0.18s;
   }
 
   .hoverTile:hover {
@@ -319,8 +316,8 @@ button:focus-visible,
   }
 
   .hoverTile:hover::after {
-    opacity: 1;
-    transition-delay: 0s;
+    transform: scaleY(1);
+    transition-duration: 0.18s;
   }
 
   .hoverTile:hover h2,
@@ -339,11 +336,11 @@ button:focus-visible,
   .postCard.hoverTile:hover,
   .serviceCard.hoverTile:hover,
   .heroAccent.hoverTile:hover {
-    background: linear-gradient(145deg, #1f73dd 0%, #0f67d6 58%, #0b56c2 100%);
+    background: #ffffff;
   }
 
   .blogGrid .postCard.hoverTile:hover:first-child {
-    background: linear-gradient(145deg, #1f73dd 0%, #0f67d6 58%, #0b56c2 100%);
+    background: linear-gradient(120deg, #ffffff 0%, #eef5ff 100%);
   }
 
   .heroAccent.hoverTile:hover .accentWave {

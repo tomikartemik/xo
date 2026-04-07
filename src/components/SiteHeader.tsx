@@ -10,7 +10,6 @@ type SiteHeaderProps = {
   nav: {
     services: string;
     approach: string;
-    estimate: string;
     blog: string;
     contact: string;
   };
@@ -31,7 +30,6 @@ export function SiteHeader({ locale, nav }: SiteHeaderProps) {
       <nav className="desktopNav">
         <a href="#services" className="navLink">{nav.services}</a>
         <a href="#approach" className="navLink">{nav.approach}</a>
-        <a href="#estimate" className="navLink">{nav.estimate}</a>
         <Link href={`/${locale}/blog`} className="navLink">{nav.blog}</Link>
         <a href="#contact" className="navLink navCta">{nav.contact}</a>
       </nav>
@@ -60,7 +58,6 @@ export function SiteHeader({ locale, nav }: SiteHeaderProps) {
         <div className="mobileMenuLinks">
           <a href="#services" className="navLink" onClick={closeMenu}>{nav.services}</a>
           <a href="#approach" className="navLink" onClick={closeMenu}>{nav.approach}</a>
-          <a href="#estimate" className="navLink" onClick={closeMenu}>{nav.estimate}</a>
           <Link href={`/${locale}/blog`} className="navLink" onClick={closeMenu}>{nav.blog}</Link>
           <a href="#contact" className="navLink navCta" onClick={closeMenu}>{nav.contact}</a>
         </div>
